@@ -180,6 +180,9 @@
 				@include block(569, 506);
 				border-radius: $border-radius-lg;
 				overflow: hidden;
+				@include media-breakpoint-down(lg) {
+					--ratio: 356/569;
+				}
 				img {
 					position: absolute;
 					left: 0;
@@ -192,10 +195,11 @@
 		--swiperArrowPosition: 5%;
 		--swiperArrowSize: #{rem(43)};
 		border-radius: $border-radius-lg;
-		// overflow: hidden;
-		// @include media-breakpoint-up(md) {
-		// 	--swiperArrowSize: #{rem(43)};
-		// }
+		overflow: hidden;
+		position: relative;
+		@include media-breakpoint-up(md) {
+			--swiperArrowSize: #{rem(43)};
+		}
 		picture {
 			border-radius: 0 !important;
 		}
@@ -250,15 +254,22 @@
 		@include media-breakpoint-up(lg) { 
 			margin-top: rem(68);
 		}
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+		}
 	}
 	&__map-link {
 		width: 100%;
     padding: rem(19.5) rem(10);
 		&--2 {
-			padding: rem(12) rem(10);
+			padding: rem(11) rem(10);
 			border-width: 2px;
 			font-weight: 600;
-			margin-left: rem(6);
+			// margin-left: rem(6);
+			.icon {
+				font-size: rem(36);
+				margin-right: 10px;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {

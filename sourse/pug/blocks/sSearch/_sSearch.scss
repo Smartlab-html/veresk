@@ -169,6 +169,12 @@
 			color: #DE80B7;
 		}
 	}
+	&__row-sort {
+		@include media-breakpoint-down(md) {
+			justify-content: center;
+			--bs-gutter-y: #{rem(15)};
+		}
+	}
 }
 
 .filter-block{

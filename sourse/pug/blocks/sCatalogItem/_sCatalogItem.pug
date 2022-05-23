@@ -59,14 +59,17 @@ mixin sCatalogItem(data)
 								+pic(`sCatalogItem-2.jpg`, `bg`, 0)
 						.col-12
 							h3 Фотогалерея
-							+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2")
-								+pic(`sCatalogItem-3.jpg`, `bg`, 0)
-							+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").d-none
-								+pic(`sCatalogItem-3.jpg`, `bg`, 0)
-							+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").d-none
-								+pic(`sCatalogItem-3.jpg`, `bg`, 0)
-							+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").d-none
-								+pic(`sCatalogItem-3.jpg`, `bg`, 0)
+							+e.slider--js
+								.swiper-wrapper
+									+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").swiper-slide
+										+pic(`sCatalogItem-3.jpg`, `bg`, 0)
+									+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").swiper-slide
+										+pic(`sCatalogItem-3.jpg`, `bg`, 0)
+									+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").swiper-slide
+										+pic(`sCatalogItem-3.jpg`, `bg`, 0)
+									+e.img-wrap(href="img/@2x/sCatalogItem-3.jpg" data-fancybox="sCatalogItem-2").swiper-slide
+										+pic(`sCatalogItem-3.jpg`, `bg`, 0)
+								+arrow
 				.col-12
 					+e.map-wrap
 						h3 Расположение участка
@@ -78,7 +81,7 @@ mixin sCatalogItem(data)
 							.col.col-lg-4
 								+e.map-link(href="#").btn.btn-primary Задать вопрос
 							.col-auto.col-lg-4
-								+e.map-link--2(href="#").btn.btn-outline-primary
-									+img('img/@2x/document-outline.png')
+								+e.map-link--2(href="#request2").btn.btn-outline-primary.link-modal-js
+									+icon('document')
 									| Запросить документы
 	// end sCatalogItem
