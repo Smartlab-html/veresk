@@ -11,6 +11,7 @@
 
 		}
 		&__inner{
+			overflow: hidden;
 			padding: 25px 20px 35px;
 			// margin-left: -20px;
 			// margin-right: -20px;
@@ -107,8 +108,12 @@
 		left: 20px;
 		background-color: #fff;
 		z-index: 20;
-		width: 264px;
 		padding: 20px;
+		width: 100%;
+    max-width: 200px;
+		@include media-breakpoint-up(sm) {
+			max-width: 264px;
+		}
 	}
 	.custom-input{
 		margin-bottom: 14px;
@@ -187,7 +192,7 @@
 		font-family: "Gilroy";
 	}
 	&__slider {
-		overflow: hidden;
+		// overflow: hidden;
 		.filter-head__row-sort {
 			@include media-breakpoint-up(lg) {
 				justify-content: flex-end;
@@ -223,7 +228,6 @@
 		padding: 40px;
 	}
 	&__inner{
-
 		padding: 30px 20px;
 		background: #F8F8F8;
 		border-radius: 10px;
