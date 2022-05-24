@@ -18,6 +18,9 @@
 			border-radius: 10px;
 			.product-item{
 				background: #F8F8F8;
+				h6 {
+					font-family: "Gilroy";
+				}
 			}
 		}
 		.btn{
@@ -25,6 +28,9 @@
 				padding: rem(15) rem(10);
 				font-size: 12px;
 			}
+		}
+		&__show {
+			font-family: "Gilroy";
 		}
 		&__btn{
 			@extend .btn, .btn-primary;
@@ -175,9 +181,15 @@
 			--bs-gutter-y: #{rem(15)};
 		}
 	}
+	&__title {
+		font-family: "Gilroy";
+	}
 }
 
 .filter-block{
+	&__head {
+		font-family: "Gilroy";
+	}
 	&--map{
 		position: relative;
 		z-index: 4;

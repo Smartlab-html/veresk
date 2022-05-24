@@ -35,6 +35,9 @@
 		}
 	}
 	.small-card-item {
+		h4 {
+			font-family: "Gilroy";
+		}
 		&:not(:last-child) {
 			margin-bottom: rem(16);
 		}
@@ -77,6 +80,7 @@
 			color: $purple;
 			font-weight: 700;
 			margin-bottom: rem(27);
+			font-family: "Gilroy";
 			@include media-breakpoint-up(md) {
 				margin-bottom: rem(44);
 			}

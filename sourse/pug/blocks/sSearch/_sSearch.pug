@@ -119,7 +119,7 @@ mixin sSearch(data)
 			+b.section-title.text-center
 				h2 Воспользуйтесь поиском
 				//- p Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
-			.h3.fw-600.mb-3 Отображение подбора
+			//- .h3.fw-600.mb-3 Отображение подбора
 			+e.row-head.row.g-3.mb-4
 				//- .col-auto
 				//- 	+e.btn(href="#").active 
@@ -140,7 +140,7 @@ mixin sSearch(data)
 							.tabs
 								+e.row.row
 									.col
-										.h5.fw-600.mb-0 Найдено земель:  
+										+e.title.h5.fw-600.mb-0 Найдено земель:  
 											| 
 											span.text-primary 325
 									.col-auto
@@ -201,7 +201,7 @@ mixin sSearch2(data)
 			+b.section-title
 				h2 Воспользуйтесь поиском
 				+e.text Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
-			.h3.fw-600.mb-3 Отображение подбора
+			+e.show.h3.fw-600.mb-3 Отображение подбора
 			.tabs
 				+e.row-head.row.g-3.mb-4
 					.col-auto

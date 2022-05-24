@@ -78,6 +78,7 @@
 		color: $body-color;
 		margin-bottom: rem(13);
 		font-weight: 700;
+		font-family: "Gilroy";
 		@include media-breakpoint-up(lg) {
 			margin-bottom: rem(18);
 		}
