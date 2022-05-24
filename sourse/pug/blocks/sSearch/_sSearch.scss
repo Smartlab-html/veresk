@@ -11,7 +11,7 @@
 
 		}
 		&__inner{
-			padding: 35px 20px;
+			padding: 25px 20px 35px;
 			// margin-left: -20px;
 			// margin-right: -20px;
 			background: #FFFFFF;
@@ -187,6 +187,9 @@
 }
 
 .filter-block{
+	@include media-breakpoint-up(lg) {
+		padding-top: rem(13);
+	}
 	&__head {
 		font-family: "Gilroy";
 	}
