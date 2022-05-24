@@ -421,6 +421,17 @@ function eventHandler() {
 		// freeModeMomentum: true,
 
 	});
+	const filterHeadSlider = new Swiper('.filter-head__slider--js', {
+		slidesPerView: 'auto',
+		freeMode: true,
+		watchOverflow: true,
+		spaceBetween: 0,
+		// loopFillGroupWithBlank: true,
+		// touchRatio: 0.2,
+		// slideToClickedSlide: true,
+		// freeModeMomentum: true,
+
+	});
 	// modal window
 
 	var interleaveOffset = 0.5;

@@ -32,7 +32,8 @@ mixin addblock()
 
 mixin product-item(t)
 	+b.product-item
-		+pic(`product-item-1.png`, `bg`, 0)
+		a(href="#") 
+			+pic(`product-item-1.png`, `bg`, 0)
 		h6!= t
 		p id 12345
 		table

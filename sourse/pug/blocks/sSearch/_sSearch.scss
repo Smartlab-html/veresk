@@ -135,6 +135,7 @@
 	}
 	.row{
 		align-items: center;
+		--bs-gutter-y: #{rem(15)};
 	}
 	&__row {
 		margin-bottom: rem(20);
@@ -177,12 +178,27 @@
 	}
 	&__row-sort {
 		@include media-breakpoint-down(md) {
-			justify-content: center;
+			// justify-content: center;
 			--bs-gutter-y: #{rem(15)};
+			--bs-gutter-x: #{rem(15)};
 		}
 	}
 	&__title {
 		font-family: "Gilroy";
+	}
+	&__slider {
+		overflow: hidden;
+		.filter-head__row-sort {
+			@include media-breakpoint-up(lg) {
+				justify-content: flex-end;
+			}
+		}
+	}
+	&__slide {
+		max-width: max-content;
+		&:not(:last-child) {
+			margin-right: rem(17);
+		}
 	}
 }
 

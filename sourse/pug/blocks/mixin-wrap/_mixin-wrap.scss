@@ -97,6 +97,7 @@
 		padding: rem(10) rem(10) rem(15);
 	}
 	picture {
+		cursor: pointer;
 		@include block(240, 220);
 		border-radius: $border-radius-lg;
 		overflow: hidden;

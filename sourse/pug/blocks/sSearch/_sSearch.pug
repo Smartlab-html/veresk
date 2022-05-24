@@ -139,7 +139,7 @@ mixin sSearch(data)
 						+b.filter-head
 							.tabs
 								+e.row.row
-									.col
+									.col-12.col-md
 										+e.title.h5.fw-600.mb-0 Найдено земель:  
 											| 
 											span.text-primary 325
@@ -153,9 +153,9 @@ mixin sSearch(data)
 											| по критериям
 							.row.g-3
 								.col-auto.fw-600 Сортировать: 
-								.col
-									+e.row-sort.row
-										.col-auto
+								+e.slider--js.col-12.col-md
+									+e.row-sort.swiper-wrapper
+										+e.slide.swiper-slide
 											+e.sorting-wrap
 												+e.btn(type='button').active  по цене
 												+e.sorting-item
@@ -163,7 +163,7 @@ mixin sSearch(data)
 														+icon('arrow-up')
 													a(href="#").active
 														+icon('arrow-down')
-										.col-auto
+										+e.slide.swiper-slide
 											+e.sorting-wrap
 												+e.btn(type='button') по площади
 												+e.sorting-item
@@ -171,7 +171,7 @@ mixin sSearch(data)
 														+icon('arrow-up')
 													a(href="#").active
 														+icon('arrow-down')
-										.col-auto
+										+e.slide.swiper-slide
 											+e.sorting-wrap
 												+e.btn(type='button') по дате добавления
 												+e.sorting-item
@@ -180,11 +180,6 @@ mixin sSearch(data)
 													a(href="#").active
 														+icon('arrow-down')
 						.tabs__block#tab1.active
-							.row.gy-4
-								- for (var x = 0; x < 9; x++)
-									.col-lg-4
-										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
-						.tabs__block#tab2
 							+b.filter-map
 								+e.map
 										+e.map-widget#map3()
@@ -193,6 +188,11 @@ mixin sSearch(data)
 									+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
 									+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
 									+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
+						.tabs__block#tab2
+							.row.gy-4
+								- for (var x = 0; x < 9; x++)
+									.col-lg-4
+										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
 						+e.btn.w-100.mt-5(href="#") Показать еще
 mixin sSearch2(data)
 	// start sSearch
