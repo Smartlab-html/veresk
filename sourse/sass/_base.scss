@@ -565,5 +565,7 @@ h2 {
 .image-bg{
 	position: fixed;
 	z-index: -1;
-	right: -280px;
+	@include media-breakpoint-up(lg) {
+		right: -280px;
+	}
 }

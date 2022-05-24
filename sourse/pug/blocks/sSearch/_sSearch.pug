@@ -118,7 +118,7 @@ mixin sSearch(data)
 		.container
 			+b.section-title.text-center
 				h2 Воспользуйтесь поиском
-				p Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
+				//- p Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
 			.h3.fw-600.mb-3 Отображение подбора
 			+e.row-head.row.g-3.mb-4
 				//- .col-auto
@@ -152,9 +152,9 @@ mixin sSearch(data)
 											span.d-none.d-lg-inline Подбор 
 											| по критериям
 							.row.g-3
-								.col-md-auto.fw-600 Сортировать: 
+								.col-auto.fw-600 Сортировать: 
 								.col
-									.row
+									+e.row-sort.row
 										.col-auto
 											+e.sorting-wrap
 												+e.btn(type='button').active  по цене
@@ -165,7 +165,7 @@ mixin sSearch(data)
 														+icon('arrow-down')
 										.col-auto
 											+e.sorting-wrap
-												+e.btn(type='button').active по площади
+												+e.btn(type='button') по площади
 												+e.sorting-item
 													a(href="#")
 														+icon('arrow-up')
@@ -173,7 +173,7 @@ mixin sSearch(data)
 														+icon('arrow-down')
 										.col-auto
 											+e.sorting-wrap
-												+e.btn(type='button').active по дате добавления
+												+e.btn(type='button') по дате добавления
 												+e.sorting-item
 													a(href="#")
 														+icon('arrow-up')
@@ -182,7 +182,7 @@ mixin sSearch(data)
 						.tabs__block#tab1.active
 							.row.gy-4
 								- for (var x = 0; x < 9; x++)
-									.col-lg-4.col-6 
+									.col-lg-4
 										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
 						.tabs__block#tab2
 							+b.filter-map

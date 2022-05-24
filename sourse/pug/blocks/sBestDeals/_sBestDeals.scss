@@ -48,9 +48,26 @@
 	.slider-controls {
 		justify-content: center;
 		margin-top: rem(32);
+		// margin-left: auto;
+    // margin-right: auto;
 		@include media-breakpoint-up(md) {
 			justify-content: flex-start;
 			margin-top: rem(30);
+		}
+		.swiper-pagination {
+			position: static !important;
+			@include media-breakpoint-up(md) {
+				transform: none;
+			}
+		}
+		.swiper-button-hand {
+			position: relative;
+			&-prev {
+				left: 0;
+			}
+			&-next {
+				right: 0;
+			}
 		}
 	}
 	@include media-breakpoint-up(xl) {

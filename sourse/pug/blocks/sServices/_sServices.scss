@@ -348,6 +348,11 @@
 			}
 		}
 	}
+	&__btn-send {
+		max-width: 15.5375rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	@include media-breakpoint-up(xl) {
 	}
 	@include media-breakpoint-up(lg) {
@@ -384,7 +389,7 @@
 			&:last-child {
 				--sPB: #{rem(75)};
 				@include media-breakpoint-up(md) {
-					--sPB: #{rem(170)};
+					--sPB: #{rem(110)};
 				}
 			}
 			.section-title {

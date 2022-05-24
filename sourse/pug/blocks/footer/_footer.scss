@@ -27,7 +27,7 @@
 			display: flex;
 			margin-bottom: 0;
 			margin-left: rem(41);
-			max-width: rem(217);
+			// max-width: rem(217);
 			flex-wrap: wrap;
 			justify-content: space-between;
 			@include media-breakpoint-up(lg) {
@@ -36,9 +36,11 @@
 				gap: 10px;
 			}
 			li {
+				// max-width: 50%;
 				a {
 					color: $black;
 					font-size: rem(12);
+
 					@include media-breakpoint-up(lg) {
 						font-size: rem(14);
 					}
@@ -124,18 +126,39 @@
 	}
 	.menu {
 		text-align: left;
+
 		li {
 			--bs-gutter-x: 0;
 			a {
 				padding-left: 0;
+				padding-right: 21px;
+				@include media-breakpoint-up(lg) {
+					margin-right: 9px;
+				}
+			}
+			&:hover {
+				.sub-menu {
+					transform: scale(1);
+				}
 			}
 			.sub-menu {
+				@include mt;
 				margin-left: 10px;
+				transform: scale(0);
+				transform-origin: top;
+				display: block; 
+				position: absolute;
+				margin-left: 0;
+				padding: 15px;
+				max-height: 200px;
+    		overflow-y: scroll;
+				top: 110%;
+				left: 0;
 				@include media-breakpoint-up(lg) {
 					padding: 7px;
 					max-width: rem(281);
-					top: -180%;
-					left: rem(186);
+					// top: -180%;
+					// left: rem(186);
 				}
 			}
 		}
