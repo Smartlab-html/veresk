@@ -131,6 +131,8 @@ mixin sSearch(data)
 				//- 		| по критериям
 				.col-auto.d-lg-none.ms-auto
 					button.btn.btn-outline-primary.filter-toggle-js Фильтры
+				.col-auto.d-lg-none
+					a.btn.btn-outline-primary.link-modal-js(href="#modal-ways") Назначение
 			+e.inner
 				.row
 					.col-lg-3
@@ -183,11 +185,14 @@ mixin sSearch(data)
 							+b.filter-map
 								+e.map
 										+e.map-widget#map3()
-								+e.block
+								+e.block#modal-ways
+									.d-lg-none.mb-4.h5 Назначение
 									+in-c("checkbox",'Все')(checked class="map-dot-input" data-color="all")
 									+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
 									+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
 									+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
+									.d-lg-none
+										button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
 						.tabs__block#tab2
 							.row.gy-4
 								- for (var x = 0; x < 9; x++)

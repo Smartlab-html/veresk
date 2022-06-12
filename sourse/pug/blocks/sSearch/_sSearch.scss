@@ -84,6 +84,10 @@
 .filter-map{
 	position: relative;
 	margin-bottom: 50px;
+	&__block{
+		
+
+	}
 	&__map{
 		min-height: 654px;
 		position: relative;
@@ -103,31 +107,38 @@
 	
 
 	&__block{
-		position: absolute;
-		top: 48px;
-		left: 20px;
-		background-color: #fff;
-		z-index: 20;
-		padding: 20px;
-		width: 100%;
-    max-width: 200px;
-		@include media-breakpoint-up(sm) {
-			max-width: 264px;
-		}
-	}
-	.custom-input{
-		margin-bottom: 14px;
-		input{
-			border-radius: 5px;
-			border: 1px solid #fff;
-			box-shadow: 0 0 0 1px #B9B9B9;
-			width: 16px;
-			height: 16px;
-			&:checked{
-				background: var(--color-map, #{$primary});
+		.custom-input{
+			margin-bottom: 14px;
+			input{
+				border-radius: 5px;
+				border: 1px solid #fff;
+				box-shadow: 0 0 0 1px #B9B9B9;
+				width: 16px;
+				height: 16px;
+				&:checked{
+					background: var(--color-map, #{$primary});
+				}
 			}
 		}
+		@include media-breakpoint-up(lg) {
+			display: block !important;
+			position: absolute;
+			top: 48px;
+			left: 20px;
+			z-index: 20;
+			// max-width: 200px;
+			// @include media-breakpoint-up(sm) {
+			// }
+			max-width: 264px;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+		background-color: #fff;
+		padding: 20px;
+		width: 100%;
 	}
+
 
 }
 .filter-head{

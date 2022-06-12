@@ -343,6 +343,7 @@
 						<div class="col-auto d-lg-none ms-auto">
 							<button class="btn btn-outline-primary filter-toggle-js">Фильтры</button>
 						</div>
+						<div class="col-auto d-lg-none"><a class="btn btn-outline-primary link-modal-js" href="#modal-ways">Назначение</a></div>
 					</div>
 					<div class="sSearch__inner">
 						<div class="row">
@@ -546,7 +547,8 @@
 											<div class="filter-map__map-widget" id="map3">
 											</div>
 										</div>
-										<div class="filter-map__block">
+										<div class="filter-map__block" id="modal-ways">
+											<div class="d-lg-none mb-4 h5">Назначение</div>
 											<label class="custom-input form-check"><input class="custom-input__input form-check-input map-dot-input" name="checkbox" type="checkbox" checked="checked" data-color="all"/><span class="custom-input__text form-check-label">Все</span>
 											</label>
 											<label class="custom-input form-check"><input class="custom-input__input form-check-input map-dot-input" name="checkbox" type="checkbox" checked="checked" data-color="#00ff00" style="--color-map:#00ff00;"/><span class="custom-input__text form-check-label">Зеленые</span>
@@ -555,6 +557,9 @@
 											</label>
 											<label class="custom-input form-check"><input class="custom-input__input form-check-input map-dot-input" name="checkbox" type="checkbox" checked="checked" data-color="#ffcc00" style="--color-map:#ffcc00;"/><span class="custom-input__text form-check-label">Желтые</span>
 											</label>
+											<div class="d-lg-none">
+												<button class="btn btn-primary w-100 modal-close-js mt-2">Показать участки</button>
+											</div>
 										</div>
 									</div>
 								</div>
