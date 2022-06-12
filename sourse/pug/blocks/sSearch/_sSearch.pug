@@ -129,8 +129,7 @@ mixin sSearch(data)
 				//- 	+e.btn(href="#") 
 				//- 		span.d-none.d-lg-inline Подбор 
 				//- 		| по критериям
-				.col-auto.d-lg-none.ms-auto
-					button.btn.btn-outline-primary.filter-toggle-js Фильтры 
+				
 			+e.inner
 				.row
 					.col-lg-3
@@ -151,7 +150,8 @@ mixin sSearch(data)
 										+e.btn--2.btn-tab(href="#tab2")
 											span.d-none.d-lg-inline Подбор 
 											| по критериям
-							
+									.col-auto.d-lg-none
+										button.btn.btn-outline-primary.filter-toggle-js Фильтры 
 						.tabs__block#tab1.active
 							
 							a.btn.btn-outline-primary.link-modal-js.d-lg-none.mb-3.w-100(href="#modal-ways") Назначение
