@@ -130,9 +130,7 @@ mixin sSearch(data)
 				//- 		span.d-none.d-lg-inline Подбор 
 				//- 		| по критериям
 				.col-auto.d-lg-none.ms-auto
-					button.btn.btn-outline-primary.filter-toggle-js Фильтры
-				.col-auto.d-lg-none
-					a.btn.btn-outline-primary.link-modal-js(href="#modal-ways") Назначение
+					button.btn.btn-outline-primary.filter-toggle-js Фильтры 
 			+e.inner
 				.row
 					.col-lg-3
@@ -153,35 +151,10 @@ mixin sSearch(data)
 										+e.btn--2.btn-tab(href="#tab2")
 											span.d-none.d-lg-inline Подбор 
 											| по критериям
-							.row.g-3
-								.col-auto.fw-600 Сортировать: 
-								+e.slider--js.col-12.col-md
-									+e.row-sort.swiper-wrapper
-										+e.slide.swiper-slide
-											+e.sorting-wrap
-												+e.btn(type='button').active  по цене
-												+e.sorting-item
-													a(href="#")
-														+icon('arrow-up')
-													a(href="#").active
-														+icon('arrow-down')
-										+e.slide.swiper-slide
-											+e.sorting-wrap
-												+e.btn(type='button') по площади
-												+e.sorting-item
-													a(href="#")
-														+icon('arrow-up')
-													a(href="#").active
-														+icon('arrow-down')
-										+e.slide.swiper-slide
-											+e.sorting-wrap
-												+e.btn(type='button') по дате добавления
-												+e.sorting-item
-													a(href="#")
-														+icon('arrow-up')
-													a(href="#").active
-														+icon('arrow-down')
+							
 						.tabs__block#tab1.active
+							
+							a.btn.btn-outline-primary.link-modal-js.d-lg-none.mb-3(href="#modal-ways") Назначение
 							+b.filter-map
 								+e.map
 										+e.map-widget#map3()
@@ -194,6 +167,36 @@ mixin sSearch(data)
 									.d-lg-none
 										button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
 						.tabs__block#tab2
+
+							+b.filter-head
+								.row.g-3
+									.col-auto.fw-600 Сортировать: 
+									+e.slider--js.col-12.col-md
+										+e.row-sort.swiper-wrapper
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button').active  по цене
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по площади
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по дате добавления
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
 							.row.gy-4
 								- for (var x = 0; x < 9; x++)
 									.col-lg-4
