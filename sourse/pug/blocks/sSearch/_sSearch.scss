@@ -147,6 +147,12 @@
 }
 .filter-head{
 	margin-bottom: 26px;
+	@include media-breakpoint-down(md)  {
+		.row.g-3{
+
+			// --bs-gutter-x: #{rem(5)} !important;
+		}
+	}
 	&__inner{
 		background-color: #fff;
 		padding: rem(20);

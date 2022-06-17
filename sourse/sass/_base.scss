@@ -506,11 +506,20 @@ h2 {
 .ymaps-2-1-79-balloon{
 	box-shadow: none !important;
 }
-
+.ymaps-2-1-79-balloon__content{
+	&> *{
+		height: auto !important;
+	}
+}
 .ymaps-2-1-79-balloon__layout{
 	border-radius: 10px;
 	background: #FFFFFF;
-	width: 364px;
+	width: 100%;
+	@include media-breakpoint-up(sm) {
+		width: 364px;
+
+	}
+	width: 204px;
 	border: none;
 }
 

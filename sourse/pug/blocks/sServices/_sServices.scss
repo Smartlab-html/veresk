@@ -174,9 +174,9 @@
 		}
 	}
 	&__card {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: center;
 		padding: rem(22) rem(16);
 		background-color: var(--cardColor, #{$light});
 		height: 100%;
@@ -209,17 +209,17 @@
 		p {
 			display: block;
 			width: 100%;
-			font-size: rem(12);
-			line-height: 130%;
+			// font-size: rem(12);
+			// line-height: 130%;
 			margin-bottom: 0;
 			@include media-breakpoint-up(sm) {
-				font-size: rem(14);
+				// font-size: rem(14);
 			}
 			@include media-breakpoint-only(lg) {
-				font-size: rem(12);
+				// font-size: rem(12);
 			}
 			@media (max-width: 427.98px) {
-				font-size: rem(14);
+				// font-size: rem(14);
 			}
 		}
 		&--lg {

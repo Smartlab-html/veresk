@@ -1,4 +1,9 @@
 // start .headerBlock
+body:not(.main-page) .headerBlock {
+	&__row{
+		align-items: center;
+	}
+}
 .headerBlock {
 	margin-bottom: 1px;
 	--sPT: 42px;
@@ -10,6 +15,7 @@
 	background-color: $body-color;
 	position: relative;
 	z-index: 2;
+	
 	&__row{
 		position: relative;
 		// align-items: center;
@@ -98,11 +104,18 @@
 			}
 		}
 		.headerBlock__col-request {
+			@include media-breakpoint-only(lg) {
+			}
+			@include media-breakpoint-down(lg) {
+				margin-bottom: 50px;
+				
+				width: 100%;
+			}
 			@include media-breakpoint-down(md) {
+				margin-bottom: 0;
 				position: absolute;
 				left: 50%;
 				bottom: -303px;
-				width: 100%;
 				max-width: rem(388);
 				margin-left: auto;
 				margin-right: auto;
