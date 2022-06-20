@@ -3,6 +3,9 @@
 		// --sPT: ;
 		// --sPB: ;
 		// --sTPB: ;
+		h1{
+			@include rfs(50px);
+		}
 		.section-title{
 			&__text{
 				@include rfs(26px);

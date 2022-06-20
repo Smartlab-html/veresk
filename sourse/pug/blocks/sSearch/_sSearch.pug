@@ -112,12 +112,16 @@ mixin filter2()
 				.col-lg-auto
 					.fw-600 Сбросить фильтр
 
-mixin sSearch(data)
+mixin sSearch(h1)
 	// start sSearch
 	+b.SECTION.sSearch.section#sSearch&attributes(attributes).bg-light
 		.container
-			+b.section-title.text-center
-				h2 Воспользуйтесь поиском
+			if h1
+				+b.section-title
+					h1= h1
+			else
+				+b.section-title.text-center
+					h2 Воспользуйтесь поиском
 				//- p Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
 			//- .h3.fw-600.mb-3 Отображение подбора
 			+e.row-head.row.g-3.mb-4
