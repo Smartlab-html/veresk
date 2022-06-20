@@ -147,16 +147,16 @@ mixin sSearch(h1)
 											| 
 											span.text-primary 325
 									.col-auto
-										+e.btn--2.btn-tab(href="#tab1").active
+										+e.btn--2.btn-tab(href="#tab1")
 											span.d-none.d-lg-inline Подбор 
 											| по карте
 									.col-auto
-										+e.btn--2.btn-tab(href="#tab2")
+										+e.btn--2.btn-tab(href="#tab2").active
 											span.d-none.d-lg-inline Подбор 
 											| по критериям
 									.col-auto.d-lg-none
 										button.btn.btn-outline-primary.filter-toggle-js Фильтры 
-						.tabs__block#tab1.active
+						.tabs__block#tab1
 							
 							a.btn.btn-outline-primary.link-modal-js.d-lg-none.mb-3.w-100(href="#modal-ways") Назначение
 							+b.filter-map
@@ -170,7 +170,7 @@ mixin sSearch(h1)
 									+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
 									.d-lg-none
 										button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
-						.tabs__block#tab2
+						.tabs__block#tab2.active
 
 							+b.filter-head
 								.row.g-3
@@ -205,7 +205,7 @@ mixin sSearch(h1)
 								- for (var x = 0; x < 9; x++)
 									.col-lg-4
 										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
-						+e.btn.w-100.mt-5(href="#") Показать еще
+							+e.btn.w-100.mt-5(href="#") Показать еще
 mixin sSearch2(data)
 	// start sSearch
 	+b.SECTION.sSearch.section#sSearch&attributes(attributes).bg-light
