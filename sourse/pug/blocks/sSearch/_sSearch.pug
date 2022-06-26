@@ -300,3 +300,136 @@ mixin sSearch2(data)
 				.row
 					.col-lg-3
 					.col-lg-9
+
+
+mixin sSearch3(h1, subtitle)
+	// start sSearch
+	+b.SECTION.sSearch--generalCatalog.section#sSearch&attributes(attributes)
+		+e.container.container
+			if h1
+				+b.section-title
+					h1= h1
+					p!= subtitle
+			else
+				+b.section-title.text-center
+					h2 Воспользуйтесь поиском
+				//- p Pellentesque mollis nibh non nibh laoreet vulputate. Mauris id&nbsp;metus dignissim, efficitur nulla quis, fermentum.
+			//- .h3.fw-600.mb-3 Отображение подбора
+			+e.row-head.row.g-3.mb-4
+				//- .col-auto
+				//- 	+e.btn(href="#").active 
+				//- 		span.d-none.d-lg-inline Подбор 
+				//- 		| по карте
+				//- .col-auto
+				//- 	+e.btn(href="#") 
+				//- 		span.d-none.d-lg-inline Подбор 
+				//- 		| по критериям
+				
+			+e.inner
+				.row
+					.col-lg-3
+						+filter().--aside.--js
+					.col-lg-9
+						+b.filter-head
+							.tabs
+								+e.row.row
+									.col-12.col-md
+										+e.title.h5.fw-600.mb-0 Найдено земель:  
+											| 
+											span.text-primary 325
+									.col-auto
+										+e.btn--2.btn-tab(href="#tab1")
+											span.d-none.d-lg-inline Подбор 
+											| по карте
+									.col-auto
+										+e.btn--2.btn-tab(href="#tab2").active
+											span.d-none.d-lg-inline Подбор 
+											| по критериям
+									.col-auto.d-lg-none
+										button.btn.btn-outline-primary.filter-toggle-js Фильтры 
+						.tabs__block#tab1
+							
+							a.btn.btn-outline-primary.link-modal-js.d-lg-none.mb-3.w-100(href="#modal-ways") Назначение
+							+b.filter-map
+								+e.map
+										+e.map-widget#map3()
+								+e.block#modal-ways
+									.d-lg-none.mb-4.h5 Назначение
+									+in-c("checkbox",'Все')(checked class="map-dot-input" data-color="all")
+									+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
+									+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
+									+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
+									.d-lg-none
+										button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
+							+b.filter-head
+								.row.g-3
+									.col-auto.fw-600 Сортировать: 
+									+e.slider--js.col-12.col-md
+										+e.row-sort.swiper-wrapper
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button').active  по цене
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по площади
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по дате добавления
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+							.row.gy-4
+								- for (var x = 0; x < 6; x++)
+									.col-lg-4
+										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
+							.row
+								+pugin('true')
+						.tabs__block#tab2.active
+
+							+b.filter-head
+								.row.g-3
+									.col-auto.fw-600 Сортировать: 
+									+e.slider--js.col-12.col-md
+										+e.row-sort.swiper-wrapper
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button').active  по цене
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по площади
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+											+e.slide.swiper-slide
+												+e.sorting-wrap
+													+e.btn(type='button') по дате добавления
+													+e.sorting-item
+														a(href="#")
+															+icon('arrow-up')
+														a(href="#").active
+															+icon('arrow-down')
+							.row.gy-4
+								- for (var x = 0; x < 9; x++)
+									.col-lg-4
+										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
+							.row
+								+pugin('true')

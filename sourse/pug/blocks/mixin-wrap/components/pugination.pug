@@ -1,5 +1,5 @@
 //- pugination
-mixin pugin()
+mixin pugin(dots)
 	//- nav(aria-label='...')
 	//- 	ul.pagination.justify-content-center
 	//- 		li.page-item.disabled
@@ -39,6 +39,9 @@ mixin pugin()
 				span.page-numbers.current  1
 			- for (var x = 2; x < 5; x++)
 				+li(x)
+			if dots
+				+li()
+					span.dots ...
 			+li()
 				a.next(href='#')
 					+icon('arrow-right')

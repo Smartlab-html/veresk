@@ -10,3 +10,5 @@
 4. <https://smartlab-html.github.io/veresk/public/04-single-service.html>
 6. <https://smartlab-html.github.io/veresk/public/06-catalog-item.html>
 7. <https://smartlab-html.github.io/veresk/public/09-categories.html>
+
+7. <https://smartlab-html.github.io/veresk/public/10-general-catalog.html>

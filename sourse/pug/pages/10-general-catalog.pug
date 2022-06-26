@@ -1,0 +1,229 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContactMain/_sContactMain.pug
+//- include ../blocks/sObjects/_sObjects.pug
+//- include ../blocks/sSearch/_sSearch.pug
+//- include ../blocks/sBestDeals/_sBestDeals.pug
+include ../blocks/sForm/_sForm.pug
+include ../blocks/sServices/_sServices.pug
+include ../blocks/sBestDeals/_sBestDeals.pug
+include ../blocks/sSearch/_sSearch.pug
+
+block variables
+	- let  mainPage= null 
+	- let  bg= null
+
+block title
+	- let  title= 'Многоэтажное жилищное строительство'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +headerBlock()
+	+breadcrumb("Главная", "Каталог",'Многоэтажное жилищное строительство')
+	+sSearch3('Земельные участки под застройку', 'Девелоперский бизнес&nbsp;&mdash; это не&nbsp;просто строительство зданий, а&nbsp;выполнение полного комплекса работ по&nbsp;созданию объекта недвижимости для последующей продажи с&nbsp;целью получения прибыли. Первым этапом реализации любого инвестиционного проекта выступает поиск и&nbsp;покупка земельного участка под застройку. Если вас интересует столичный регион, обращайтесь в&nbsp;нашу компанию VERESK GROUP. Мы&nbsp;помогли своим клиентам освоить более 100&nbsp;Га земли, на&nbsp;которой построено более 1&nbsp;кв.м. жилья, а&nbsp;также социальные объекты.')
+	+sBestDeals()
+	+sForm()
+	+sContactMain()
+	+footer()
+
+
+block map
+	script.
+		function init() {
+				var center = [55.755819, 37.617644];
+				var myMap1 = new ymaps.Map('map', {
+						center: center,
+						zoom: 17,
+						controls: ['zoomControl']
+				});
+				var myPlacemark1 = new ymaps.Placemark(center, {
+						// Свойства.
+						// Содержимое иконки, балуна и хинта.
+						hintContent: 'Veresk Group',
+						balloonContent: 'Москва, улица Первая, дом 20, офис 303'
+				});
+				myMap1.geoObjects.add(myPlacemark1);
+				myMap1.behaviors.disable('scrollZoom');
+				//на мобильных устройствах... (проверяем по userAgent браузера)
+				if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+					// ... отключаем перетаскивание карты
+					myMap1.behaviors.disable('drag');
+				}
+
+
+
+			var myMap = new ymaps.Map('map3', {
+					center: [55.30954, 37.721587],
+					zoom: 8
+			}, {
+					searchControlProvider: 'yandex#search'
+			});
+	
+				// Функция, которая по состоянию чекбоксов в меню
+				// показывает или скрывает геообъекты из выборки.
+				function checkState () {
+						
+				}
+				
+				$(document).on('click', '.map-dot-input', function(){
+					var shownObjects,
+								byColor = new ymaps.GeoQueryResult();
+								byShape = new ymaps.GeoQueryResult(); 
+
+						if (!$(this).is('[data-color="all"]')) { 
+							console.log($(this).parents('.filter-map__block').find('[data-color="all"]'));
+							//- byColor = myObjects.add(byColor);
+							
+							$(this).parents('.filter-map__block').find('[data-color="all"]')[0].checked = false;
+						}
+						if ($('[data-color="all"]').prop('checked') && $(this).is('[data-color="all"]')) { 
+							$(this).parents('.filter-map__block').find('.map-dot-input').prop('checked', 'checked');
+							console.log(2);
+						}
+
+
+						if ($('[data-color="#ff1000"]').prop('checked')) { 
+								byColor = myObjects.search(`options.iconColor = "#ff1000"`);
+							}
+							
+						if ($('[data-color="#00ff00"]').prop('checked')) { 
+								byColor = myObjects.search(`options.iconColor = "#00ff00"`)
+								.add(byColor);
+							}
+						if ($('[data-color="#ffcc00"]').prop('checked')) { 
+								byColor = myObjects.search(`options.iconColor = "#ffcc00"`)
+								.add(byColor);
+							}
+							
+					
+
+							
+
+
+						// Мы отобрали объекты по цвету и по форме. Покажем на карте объекты,
+						// которые совмещают нужные признаки.
+						shownObjects = byColor.addToMap(myMap);
+						// Объекты, которые не попали в выборку, нужно убрать с карты.
+						myObjects.remove(shownObjects).removeFromMap(myMap); 
+				});
+				//- $('#red').click(checkState);
+				//- $('#green').click(checkState);
+				//- $('#yellow').click(checkState);
+				
+				// Создадим объекты из их JSON-описания и добавим их на карту.
+				function balloonBody(title, price, type, sq, link='#') {
+					return `
+									<div class="balloon"> 
+										<div class="balloon__title"> ${title}</div>
+										<div class="balloon__price"> ${price} </div>
+										<table>
+											<tr><td>Тип земель</td><td>${type}</td></tr>
+											<tr><td>Площадь</td><td>${sq}</td></tr>
+										</table>
+										<a class="balloon__btn" href="${link}">Перейти к объекту</a>
+									</div>
+									`
+				}
+				window.myObjects = ymaps.geoQuery({
+						type: "FeatureCollection",
+						features: [
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.34954, 37.721587],
+										},
+										properties: {
+											//- balloonContentHeader:"Lorem ipsum dolor sit amet consectetur adipiscing",
+											balloonContentBody: balloonBody('Lorem ipsum dolor sit amet consectetur adipiscing','18 000 000 ₽','Промышленное назначение','000 м2','#'),
+											balloonPanelMaxMapArea: 0,
+															//- name: 'point'
+														},
+										options: { 
+												preset:  'islands#circleDotIcon',
+												iconColor: '#00ff00'
+										}
+								},
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.24954, 37.4]
+										},
+										options: {
+												preset:  'islands#circleDotIcon',
+												iconColor: '#ff1000'
+										}
+								},
+
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.14954, 37.61587], 
+										},
+										options: {
+												preset:  'islands#circleDotIcon',
+												iconColor: '#ffcc00'
+										}
+								}
+						]
+				}).addToMap(myMap);
+				
+			var myMap4 = new ymaps.Map('map4', {
+					center: [55.30954, 37.721587],
+					zoom: 8
+			}, {
+					searchControlProvider: 'yandex#search'
+			});
+	
+				//- $('#red').click(checkState);
+				//- $('#green').click(checkState);
+				//- $('#yellow').click(checkState);
+				
+				// Создадим объекты из их JSON-описания и добавим их на карту.
+				window.myObjects2 = ymaps.geoQuery({
+						type: "FeatureCollection",
+						features: [
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.34954, 37.721587]
+										},
+										options: { 
+												preset:  'islands#circleDotIcon',
+												iconColor: '#00ff00'
+										}
+								},
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.24954, 37.4]
+										},
+										options: {
+												preset:  'islands#circleDotIcon',
+												iconColor: '#ff1000'
+										}
+								},
+
+								{
+										type: 'Feature',
+										geometry: {
+												type: 'Point',
+												coordinates: [55.14954, 37.61587], 
+										},
+										options: {
+												preset:  'islands#circleDotIcon',
+												iconColor: '#ffcc00'
+										}
+								}
+						]
+				}).addToMap(myMap4);
+
+		}
