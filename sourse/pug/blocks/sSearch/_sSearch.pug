@@ -1,4 +1,4 @@
-mixin filter()
+mixin filter(mapFilter)
 	+b.filter-block&attributes(attributes)
 		+e.head.h5.fw-600.mb-4 Фильтр
 		+e.close.filter-toggle-js.d-lg-none
@@ -11,6 +11,20 @@ mixin filter()
 						each item in items
 							+in-c("checkbox", item)
 						block
+			if mapFilter
+				+item('Назначение').mapFilter
+					+in-c("checkbox",'Многоэтажное жилищное строительство')(checked class="map-dot-input" style="--color-map:#FF0000")
+					+in-c("checkbox",'Индивидуальное жилищное строительство')(checked class="map-dot-input" style="--color-map:#00ff00")
+					+in-c("checkbox",'Промышленное назначение')(checked class="map-dot-input" style="--color-map:#0000FF")
+					+in-c("checkbox",'Коммерческое назначение')(checked class="map-dot-input" style="--color-map:#F8B708")
+					+in-c("checkbox",'Рекреационное назначение')(checked class="map-dot-input" style="--color-map:#15E3F0")
+					+in-c("checkbox",'Сельскохозяйственное использование')(checked class="map-dot-input" style="--color-map:#FFAAAA")
+					+in-c("checkbox",'Многоэтажное жилищное строительство')(checked class="map-dot-input" style="--color-map:#FF0000")
+					+in-c("checkbox",'Индивидуальное жилищное строительство')(checked class="map-dot-input" style="--color-map:#00ff00")
+					+in-c("checkbox",'Промышленное назначение')(checked class="map-dot-input" style="--color-map:#0000FF")
+					+in-c("checkbox",'Коммерческое назначение')(checked class="map-dot-input" style="--color-map:#F8B708")
+					+in-c("checkbox",'Рекреационное назначение')(checked class="map-dot-input" style="--color-map:#15E3F0")
+					+in-c("checkbox",'Сельскохозяйственное использование')(checked class="map-dot-input" style="--color-map:#FFAAAA")
 			+item(`Регион`,`Москва`,`Московская область`,`Регионы`)
 			+item(`Шоссе`,`Алтуфьевское`,`Боровское`,`Варшавское`,`Вашутинское`,`Волковское`,`Волоколамское`,`Варшавское`,`Вашутинское`,`Волковское`,`Волоколамское`)
 			+item(`Удаленность`).remoteness
@@ -328,7 +342,7 @@ mixin sSearch3(h1, subtitle)
 			+e.inner
 				.row
 					.col-lg-3
-						+filter().--aside.--js
+						+filter('mapFilter').--aside.--js
 					.col-lg-9
 						+b.filter-head
 							.tabs
@@ -353,14 +367,14 @@ mixin sSearch3(h1, subtitle)
 							+b.filter-map
 								+e.map
 										+e.map-widget#map3()
-								+e.block#modal-ways
-									.d-lg-none.mb-4.h5 Назначение
-									+in-c("checkbox",'Все')(checked class="map-dot-input" data-color="all")
-									+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
-									+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
-									+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
-									.d-lg-none
-										button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
+								//- +e.block#modal-ways
+								//- 	.d-lg-none.mb-4.h5 Назначение
+								//- 	+in-c("checkbox",'Все')(checked class="map-dot-input" data-color="all")
+								//- 	+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
+								//- 	+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
+								//- 	+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
+								//- 	.d-lg-none
+								//- 		button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
 							+b.filter-head
 								.row.g-3
 									.col-auto.fw-600 Сортировать: 

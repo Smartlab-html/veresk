@@ -346,6 +346,24 @@
 	&__group{
 		border-bottom: 1px solid #AFAFAF;
 		margin-bottom: 22px;
+		// mapFilter
+		&.mapFilter {
+			.filter-block__group-inner {
+				// padding-right: rem(8);
+			}
+			.custom-input {
+				input {
+					margin-top: rem(4);
+					&:checked {
+						background: var(--color-map, #f8f8f8);
+						background-image: none;
+					}
+				}
+				&__text {
+					font-size: rem(12);
+				}
+			}
+		}
 	}
 	&__group-inner{
 		max-height: 209px;
@@ -357,6 +375,7 @@
 		margin-bottom: 22px;
 		padding-right: 10px;
 	}
+
 	.custom-input{
 		margin-bottom: 12px;
 		line-height: 1.2;
