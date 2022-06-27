@@ -315,6 +315,7 @@
 }
 
 .filter-block{
+	font-size: rem(14);
 	@include media-breakpoint-up(lg) {
 		padding-top: rem(13);
 	}
@@ -353,14 +354,14 @@
 			}
 			.custom-input {
 				input {
-					margin-top: rem(4);
+					margin-top: em(0);
 					&:checked {
 						background: var(--color-map, #f8f8f8);
 						background-image: none;
 					}
 				}
 				&__text {
-					font-size: rem(12);
+					// font-size: rem(13);
 				}
 			}
 		}
