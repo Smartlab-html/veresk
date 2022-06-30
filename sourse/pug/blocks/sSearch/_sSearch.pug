@@ -367,83 +367,40 @@ mixin sSearch3(h1, subtitle)
 							+b.filter-map
 								+e.map
 										+e.map-widget#map3()
-								//- +e.block#modal-ways
-								//- 	.d-lg-none.mb-4.h5 Назначение
-								//- 	+in-c("checkbox",'Все')(checked class="map-dot-input" data-color="all")
-								//- 	+in-c("checkbox",'Зеленые')(checked class="map-dot-input" data-color="#00ff00" style="--color-map:#00ff00")
-								//- 	+in-c("checkbox",'Красные')(checked class="map-dot-input" data-color="#ff1000" style="--color-map:#ff1000")
-								//- 	+in-c("checkbox",'Желтые')(checked class="map-dot-input" data-color="#ffcc00" style="--color-map:#ffcc00")
-								//- 	.d-lg-none
-								//- 		button.btn.btn-primary.w-100.modal-close-js.mt-2 Показать участки
-							+b.filter-head
-								.row.g-3
-									.col-auto.fw-600 Сортировать: 
-									+e.slider--js.col-12.col-md
-										+e.row-sort.swiper-wrapper
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button').active  по цене
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button') по площади
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button') по дате добавления
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-							.row.gy-4
-								- for (var x = 0; x < 6; x++)
-									.col-lg-4
-										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
-							.row
-								+pugin('true')
 						.tabs__block#tab2.active
 
-							+b.filter-head
-								.row.g-3
-									.col-auto.fw-600 Сортировать: 
-									+e.slider--js.col-12.col-md
-										+e.row-sort.swiper-wrapper
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button').active  по цене
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button') по площади
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-											+e.slide.swiper-slide
-												+e.sorting-wrap
-													+e.btn(type='button') по дате добавления
-													+e.sorting-item
-														a(href="#")
-															+icon('arrow-up')
-														a(href="#").active
-															+icon('arrow-down')
-							.row.gy-4
-								- for (var x = 0; x < 9; x++)
-									.col-lg-4
-										+product-item(`Pellentesque mollis nibh non nibh laoreet`)
-							.row
-								+pugin('true')
+						+b.filter-head
+							.row.g-3
+								.col-auto.fw-600 Сортировать: 
+								+e.slider--js.col-12.col-md
+									+e.row-sort.swiper-wrapper
+										+e.slide.swiper-slide
+											+e.sorting-wrap
+												+e.btn(type='button').active  по цене
+												+e.sorting-item
+													a(href="#")
+														+icon('arrow-up')
+													a(href="#").active
+														+icon('arrow-down')
+										+e.slide.swiper-slide
+											+e.sorting-wrap
+												+e.btn(type='button') по площади
+												+e.sorting-item
+													a(href="#")
+														+icon('arrow-up')
+													a(href="#").active
+														+icon('arrow-down')
+										+e.slide.swiper-slide
+											+e.sorting-wrap
+												+e.btn(type='button') по дате добавления
+												+e.sorting-item
+													a(href="#")
+														+icon('arrow-up')
+													a(href="#").active
+														+icon('arrow-down')
+						.row.gy-4
+							- for (var x = 0; x < 9; x++)
+								.col-lg-4
+									+product-item(`Pellentesque mollis nibh non nibh laoreet`)
+						.row
+							+pugin('true')
