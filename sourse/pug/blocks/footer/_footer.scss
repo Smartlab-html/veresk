@@ -69,6 +69,13 @@
 						order: 4;
 					}
 				}
+				&:not(:last-child) {
+					& > a {
+						@include media-breakpoint-down(lg) {
+							margin-right: rem(10);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -127,39 +134,33 @@
 	}
 	.menu {
 		text-align: left;
-
 		li {
 			--bs-gutter-x: 0;
+			position: relative;
 			a {
 				padding-left: 0;
-				padding-right: 21px;
-				@include media-breakpoint-up(lg) {
-					margin-right: 9px;
-				}
-			}
-			&:hover {
-				.sub-menu {
-					transform: scale(1);
-				}
 			}
 			.sub-menu {
-				@include mt;
 				margin-left: 10px;
-				transform: scale(0);
-				transform-origin: top;
-				display: block; 
-				position: absolute;
-				margin-left: 0;
-				padding: 15px;
-				max-height: 200px;
-    		overflow-y: scroll;
-				top: 110%;
-				left: 0;
+				max-height: rem(300);
+				overflow-y: scroll;
+				overflow-x: auto;
+				@include media-breakpoint-down(lg) {
+					position: absolute;
+					right: 0;
+					top: 100%;
+					padding: rem(10);
+				}
 				@include media-breakpoint-up(lg) {
 					padding: 7px;
 					max-width: rem(281);
-					// top: -180%;
-					// left: rem(186);
+					top: -180%;
+					left: rem(186);
+				}
+				a {
+					@include media-breakpoint-down(lg) {
+						padding: 7px 0;
+					}
 				}
 			}
 		}
