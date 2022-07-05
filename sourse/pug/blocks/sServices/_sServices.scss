@@ -160,16 +160,16 @@
 		p {
 			@include mt(0.2s);
 			@extend .mons;
-			font-size: rem(16);
+			// font-size: rem(16);
 			line-height: 145%;
 			margin-bottom: 0;
 			@include media-breakpoint-only(md) {
-				font-size: rem(14);
-				line-height: 120%;
+				// font-size: rem(14);
+				// line-height: 120%;
 			}
 			@media (max-width: 427.98px) {
-				line-height: 120%;
-				font-size: rem(14);
+				// line-height: 120%;
+				// font-size: rem(14);
 			}
 		}
 	}
@@ -186,7 +186,7 @@
 		}
 		ul {
 			li {
-				text-transform: uppercase;
+				// text-transform: uppercase;
 				&:not(:last-child) {
 					margin-bottom: rem(10);
 				}
@@ -231,7 +231,7 @@
 				margin-bottom: rem(27);
 			}
 			p {
-				font-size: rem(14) !important;
+				// font-size: rem(14) !important;
 				line-height: 155%;
 				margin-bottom: 1em;
 			}
@@ -252,24 +252,24 @@
 				font-size: rem(12) !important;
 				line-height: 155%;
 				margin-bottom: 1em;
-				@include media-breakpoint-up(sm) {
-					font-size: rem(18) !important;
-				}
-				@include media-breakpoint-only(md) {
-					font-size: rem(13) !important;
-				}
-				@include media-breakpoint-up(xl) {
-					font-size: rem(20) !important;
-				}
+				// @include media-breakpoint-up(sm) {
+				// 	font-size: rem(18) !important;
+				// }
+				// @include media-breakpoint-only(md) {
+				// 	font-size: rem(13) !important;
+				// }
+				// @include media-breakpoint-up(xl) {
+				// 	font-size: rem(20) !important;
+				// }
 			}
 			ul {
 				li {
 					margin-left: rem(20);
-					font-size: rem(18);
+					// font-size: rem(18);
 					margin-bottom: rem(20);
-					@include media-breakpoint-up(lg) {
-						font-size: rem(20);
-					}
+					// @include media-breakpoint-up(lg) {
+					// 	font-size: rem(20);
+					// }
 				}
 			}
 		}
@@ -378,14 +378,16 @@
 			--sPB: #{rem(40)};
 			--sTPB: #{rem(45)};
 			@include media-breakpoint-up(md) {
-				--sPT: #{rem(60)};
-				--sPB: #{rem(60)};
+				--sPT: #{rem(50)};
+				--sPB: #{rem(50)};
 				--sTPB: #{rem(40)};
 			}
 			&:first-child {
-				--sPT: #{rem(85)};
+				--sPT: #{rem(0)};
+				--sPB: #{rem(0)};
 				@include media-breakpoint-up(md) {
-					--sPT: #{rem(100)};
+					--sPB: #{rem(0)};
+					--sPT: #{rem(20)};
 				}
 			}
 			&:last-child {

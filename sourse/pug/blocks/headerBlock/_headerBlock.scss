@@ -207,12 +207,24 @@ body:not(.main-page) .headerBlock {
 
 .single-service {
 	.headerBlock {
-		--sPT: #{rem(117)};
-		--sPB: #{rem(109)};
-		@include media-breakpoint-up(lg) {
-			--sPT: #{rem(140)};
-			--sPB: #{rem(145)};
+		min-height: rem(440);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// --sPT: #{rem(117)};
+		// --sPB: #{rem(109)};
+		h1{
+			@include media-breakpoint-down(md) {
+			text-align: left;
+			}
 		}
+		.object-fit-js{
+			object-position: top;
+		}
+		@include media-breakpoint-up(lg) {
+		}
+		--sPB: #{rem(55)};
+		--sPT: #{rem(50)};
 		button {
 			@extend .btn, .btn-primary;
 			width: 100%;
