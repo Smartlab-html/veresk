@@ -561,6 +561,9 @@ h2 {
 	td{
 		padding-top: 8px;
 		padding-bottom: 8px;
+		&:first-child {
+			min-width: rem(65);
+		}
 	}
 	td:last-child{
 		text-align: right;
