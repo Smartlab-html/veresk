@@ -488,6 +488,20 @@ function eventHandler() {
 		$('.headerBlock__slider').addClass('single');
 	}
 
+	const headerBlockTextSlider = new Swiper('.headerBlock__slider-text--js', {
+		loop: true,
+		speed: 1000,
+		pagination: {
+			el: ' .headerBlock .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+		navigation: {
+			nextEl: '.headerBlock .swiper-button-next',
+			prevEl: '.headerBlock .swiper-button-prev',
+		},
+	});
+
 	// const headerBlockSlider = new Swiper('.headerBlock__slider--js', {
 	// 	slidesPerView: 1,
 	// 	loop: true,

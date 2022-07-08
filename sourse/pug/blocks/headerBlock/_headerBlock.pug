@@ -6,12 +6,22 @@ mixin headerBlock()
 				- for (var x = 0; x < 3; x++)
 					+e.slide.swiper-slide.bg-wrap
 						+pic("slide.jpg",'bg',0).picture-bg
+						//- +e.text-block
+						//- 	.container
+						//- 		+e.row.row
+						//- 			.col.col-lg-6
+						//- 				h1 Земельные<br>активы
+						//- 				p Продажа земельных участков коммерческого назначения в Москве и городах России
 		.container
 			+e.row.row
-				.col
-					+e.text-block
-						h1 Земельные<br>активы
-						p Продажа земельных участков коммерческого назначения в Москве и городах России
+				.col.col-lg-6
+					+e.slider-text--js.swiper
+						.swiper-wrapper
+							- for (var x = 0; x < 3; x++)
+								+e.slide.swiper-slide
+									+e.text-block
+										h1 Земельные<br>активы
+										p Продажа земельных участков коммерческого назначения в Москве и городах России
 					+slider-controls
 				+e.col-request.col-auto
 					+request()
