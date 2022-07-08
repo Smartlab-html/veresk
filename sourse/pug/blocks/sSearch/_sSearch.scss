@@ -111,12 +111,14 @@
 			.tabs {
 				.filter-head__btn {
 					color: $white;
-					font-weight: 600;
+					// font-weight: 600;
 					&:not(:hover) {
-						background-color: #CD4092;
-						border-color: #CD4092;
+						background-color: $light;
+						border-color: $light;
+						color: #000;
 					}
 					&.active {
+						color: $white;
 						background-color: $primary;
 						border-color: $primary;
 					}

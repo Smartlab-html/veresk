@@ -249,7 +249,7 @@
 				}
 			}
 			p {
-				font-size: rem(12) !important;
+				font-size: rem(16) !important;
 				line-height: 155%;
 				margin-bottom: 1em;
 				// @include media-breakpoint-up(sm) {
@@ -258,9 +258,9 @@
 				// @include media-breakpoint-only(md) {
 				// 	font-size: rem(13) !important;
 				// }
-				// @include media-breakpoint-up(xl) {
-				// 	font-size: rem(20) !important;
-				// }
+				@include media-breakpoint-up(lg) {
+					font-size: rem(18) !important;
+				}
 			}
 			ul {
 				li {
