@@ -181,13 +181,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: rem(224);
+	// width: rem(224);
 	max-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	@include media-breakpoint-up(md) {
 		margin-left: 0;
-		width: rem(344);
+		// width: rem(344);
+		width: max-content;
 	}
 	.swiper-button-hand {
 		min-width: var(--swiperArrowSize);

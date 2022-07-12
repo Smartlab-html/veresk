@@ -464,7 +464,7 @@ function eventHandler() {
 						var innerTranslate = slideProgress * innerOffset;
 						swiper.slides[i].querySelector(".headerBlock picture").style.transform = 
 							"translate3d(" + innerTranslate + "px, 0, 0)"; 
-					}      
+					}
 				},
 				touchStart: function(swiper) { 
 					for (var i = 0; i < swiper.slides.length; i++) {
@@ -491,6 +491,7 @@ function eventHandler() {
 	const headerBlockTextSlider = new Swiper('.headerBlock__slider-text--js', {
 		loop: true,
 		speed: 1000,
+		simulateTouch: false,
 		pagination: {
 			el: ' .headerBlock .swiper-pagination',
 			type: 'bullets',
@@ -501,7 +502,7 @@ function eventHandler() {
 			prevEl: '.headerBlock .swiper-button-prev',
 		},
 	});
-
+	swiper144.controller.control = headerBlockTextSlider;
 	// const headerBlockSlider = new Swiper('.headerBlock__slider--js', {
 	// 	slidesPerView: 1,
 	// 	loop: true,
